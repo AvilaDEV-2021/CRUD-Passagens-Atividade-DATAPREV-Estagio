@@ -3,7 +3,7 @@
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
-const connectToDatabase = require('../src/models/connection')
+const connectToDatabase = require('./models/Connection')
 const app = express()
 
 app.use(express.json())
