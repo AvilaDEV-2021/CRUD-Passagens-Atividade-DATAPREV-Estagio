@@ -1,4 +1,4 @@
-//Schema - Carrinho de compras
+//Schema - Lista de compras
 
 const mongoose = require('mongoose')
 

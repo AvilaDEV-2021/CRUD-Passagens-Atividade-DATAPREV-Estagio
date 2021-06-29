@@ -1,17 +1,21 @@
 //Rotas 
 const express = require('express')
 const CompraController = require('../controller/CompraController')
+const PassagemController = require('../controller/PassagemController')
+const UsuarioController = require('../controller/UsuarioController')
 const router = express.Router()
 
-const PassagemController = require('../controller/PassagemController')
+router.post('/usuario', UsuarioController.store)
+router.get('/usuario', UsuarioController.index)
 
-router.get('/', PassagemController.index)
+
 router.post('/', PassagemController.store)
-router.get('/compra', CompraController.index)
-router.post('/compra', CompraController.store)
+router.get('/', PassagemController.index)
+router.get('/:passagem_id', PassagemController.index)
 
-/*router.get('/', (req,res) => {
-    res.send('<h1>Gerenciador de passagens</h1>')
-})*/
+
+router.post('/compra', CompraController.store)
+router.get('/compra', CompraController.index)
+router.get('/:compra_id', CompraController.index)
 
 module.exports = router
