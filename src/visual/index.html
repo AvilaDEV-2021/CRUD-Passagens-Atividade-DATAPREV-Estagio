@@ -3,19 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>DB_S.A</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            color: cornsilk;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 1000px;
+            margin: 0 auto;
+            text-align:center;
+        }
+        button{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0 auto;
+        }
+        div{
+            width: 1000px;
+            margin: 0 auto;
+            display:table;
+            width: 100px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <h1>Página principal!</h1>
+    <h1>AVIAÇÃO S.A</h1>
+    <div>
     <form action="/adm" method="GET">
-        <button type="submit">IR PARA PASSAGENS</button>
+        <button type="submit">LISTA DE PASSAGENS</button>
     </form>
     
     <form action="/adm/compra" method="GET">
-        <button type="submit">IR PARA COMPRAS</button>
+        <button type="submit">LISTA DE COMPRAS</button>
     </form>
     
     <form action="/adm/usuario" method="GET">
         <button type="submit">LISTA DE USUÁRIOS</button>
     </form>
+    </div>
 </body>
 </html>

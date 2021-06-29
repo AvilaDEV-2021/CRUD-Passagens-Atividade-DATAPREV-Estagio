@@ -11,11 +11,11 @@ router.get('/usuario', UsuarioController.index)
 
 router.post('/', PassagemController.store)
 router.get('/', PassagemController.index)
-router.get('/:passagem_id', PassagemController.index)
+//router.get('/:passagem_id', PassagemController)
 
 
 router.post('/compra', CompraController.store)
 router.get('/compra', CompraController.index)
-router.get('/:compra_id', CompraController.index)
+router.get('/compra/:compra_id', CompraController.index)
 
 module.exports = router
