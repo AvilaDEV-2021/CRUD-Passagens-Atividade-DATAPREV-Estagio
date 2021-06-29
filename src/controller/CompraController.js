@@ -1,33 +1,26 @@
 const { response } = require('express')
 const Compra = require('../models/Compra')
 
-module.exports = {
-    async index(request, response){
+const  CompraController = {
+
+    async criarCompra(require, response){
+        const compra = require.body
         try{
-            const compras = await Compra.find()
-            return response.status(200).json({compras})
-        }   catch(error){
-            response.status(500).json({error: err.message})
+            const compras = await Compra.create(compra)
+            return response.status(201).json({message:'Compra adicionada ao carrinho'})
+        }catch(error){
+            return response.status(500).json(compras)
         }
     },
-
-    async store(request, response){
-        const {passagem, valor, pagamento} = request.body
-        if(!passagem || !valor){
-            return response.status(400).json({error: 'Nenhuma passagem comprada!'})
-        }
-
-        const compra = new Compra({
-           passagem,
-           valor,
-           pagamento,
-        })
-
+    async mostrarCompra(require, response){
+        const{usuario_id, compra_id} = require.params
         try{
-            await compra.save()
-            return response.status(201).json({message: 'Compra finalizada com sucesso'})
-        } catch(error){
-            response.status(400).json({error: error.message})
+           const carts = await Compra.findById(compra_id)
+           return response.status(201).json({carts})
+        }catch(error){
+            return response.status(500).json({error: error.message})
         }
     },
 }
+
+module.exports = CompraController

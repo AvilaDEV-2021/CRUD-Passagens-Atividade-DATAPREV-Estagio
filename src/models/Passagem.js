@@ -21,7 +21,7 @@ const passagemSchema = mongoose.Schema({
     disponibilidade:{
         type: Boolean,
         default: true,
-    }
+    },
 })
 
 module.exports = mongoose.model('Passagem', passagemSchema)
