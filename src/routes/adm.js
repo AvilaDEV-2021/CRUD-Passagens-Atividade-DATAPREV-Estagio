@@ -18,7 +18,8 @@ router.patch('/:passagem_id', PassagemController.alterarPassagem)
 router.delete('/:passagem_id', PassagemController.deletarPassagem)
 
 
-router.post('/compra', CompraController.criarCompra)
+router.post('/compra/:usuario_id', CompraController.criarCompra)
+router.get('/compra/:usuario_id', CompraController.mostrar_idCompra)
 router.get('/compra/:usuario_id/:compra_id', CompraController.mostrarCompra)
 //router.get('/compra/:compra_id', CompraController.index)
 

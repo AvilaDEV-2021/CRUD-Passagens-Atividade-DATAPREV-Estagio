@@ -3,13 +3,13 @@
 const mongoose = require('mongoose')
 
 const compraSchema = mongoose.Schema({
-    nome:{
+    passagem: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Passagem'
+    }],
+    nome:[{
         type: mongoose.Schema.Types.ObjectId,
         ref:'Usuario'
-    },
-    passagem: [{
-        type: mongoose.Types.ObjectId,
-        ref:'Passagem'
     }],
     pagamento: {
         cartão: {
